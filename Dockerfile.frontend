@@ -1,7 +1,6 @@
 FROM node:lts-bullseye-slim AS build
 
 WORKDIR /opt
-ENV REACT_APP_API_URL=${REACT_APP_API_URL}
 COPY client /opt
 RUN npm ci && npm run build
 

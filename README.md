@@ -1,29 +1,21 @@
 # Node.js-React.js-PostgreSQL project
 
-A comprehensive React-Node-Postgres boilerplate which includes all the server-client communication and basic CRUD and supported with awesome ant design features. Sequelize ORM is used to set up  the database, models and whole db communiation. 
-## Prerequisites
+## Build backend container image
 
-* Node.js
-* PostgreSQL
+```bash
+docker build -f Dockerfile.backend -t api-backend:0.0.1 .
+```
 
-## Getting Started
+## Build frontend container image
 
-### Root
+```bash
+docker build -f Dockerfile.frontend -t client-frontend:0.0.1 .
+```
 
-* Run npm i to install concurrently.
-* Run project with npm start for development after installing server and client pakages.
+## run docker compose
 
-### Apiserver
+from `.env.example` please create a `.env` and also set the value of `POSTGRES_PASS`
 
-* Head over apiserver and run npm install.
-* Create a .config.env file and add your env variables
-* Create a folder named "images" for image upload
-
-
-### Client
-
-* Cd over client and run npm install.
-
-
-
-
+```bash
+docker compose up
+```
