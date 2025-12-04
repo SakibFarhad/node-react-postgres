@@ -10,5 +10,6 @@ export default function createChannel() {
         },
         signal: controller.signal,
     });
+    console.log("API URL =", process.env.REACT_APP_API_URL);
     return { request, controller }
 };
