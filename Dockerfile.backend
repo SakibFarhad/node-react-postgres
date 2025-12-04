@@ -1,0 +1,8 @@
+FROM node:lts-bullseye-slim 
+
+ENV NODE_ENV=development
+COPY apiserver /opt/apiservers
+WORKDIR /opt/apiservers
+RUN cp ./example.env .config.env && npm i -g nodemon && npm ci 
+
+ENTRYPOINT [ "nodemon", "index.js" ]
